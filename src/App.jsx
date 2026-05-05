@@ -8,7 +8,7 @@ import DetalleCancion from "./pages/DetalleCancion";
 import Admin from "./pages/Admin";
 import Footer from "./componets/Footer";
 import FormularioCancion from "./pages/Canciones/FormularioCancion";
-import Playlist from "./pages/Playlist";
+import Playlist from "./pages/PlayList";
 
 import { useState, useEffect, useContext } from "react";
 
