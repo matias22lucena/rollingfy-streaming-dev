@@ -1,22 +1,62 @@
 export const cancionesIniciales = [
   {
-    id: 1,
-    nombre: "Blinding Lights",
-    artista: "The Weeknd",
-    album: "After Hours",
-    genero: "Synth-pop",
-    anio: 2020,
-    imagen: "https://url-de-la-portada.jpg",
-    archivo: "https://url-del-audio.mp3"
+    id: "1",
+    nombre: "Puñaladas",
+    artista: "Amigo de Artistas, Tote, Lauta",
+    album: "Puñaladas",
+    genero: "Pop",
+    anio: "2026",
+    imagen: "https://i.scdn.co/image/ab67616d0000b273de0489bb178b9c1eebf1b4a1",
+    url: "https://open.spotify.com/embed/track/4AL4EamHEBKPpdcFRkYdXN?utm_source=generator"
   },
   {
-    id : 2,
-    nombre : "Malbec",
-    artista : "Duki",
-    album: "Desde el fin del Mundo",
+    id: "2",
+    nombre: "El Fantasma",
+    artista: "Árbol",
+    album: "Guau!",
+    genero: "Rock",
+    anio: "2004",
+    imagen: "https://i.scdn.co/image/ab67616d0000b273c2f2ecbee36586c59284f96d",
+    url: "https://open.spotify.com/embed/track/0N361WhEqVunVl5ZBkfd70?utm_source=generator"
+  },
+  {
+    id: "3",
+    nombre: "Algo Tú",
+    artista: "Beéle & Shakira",
+    album: "Shakira Shakira No Rio - As Melhores",
+    genero: "Pop",
+    anio: "2026",
+    imagen: "http://i.scdn.co/image/ab67616d0000b273e938517baf9bd13b8ba72455",
+    url: "https://open.spotify.com/embed/track/1dHbcmMm9bov1q4lG7Q4nQ?utm_source=generator"
+  },
+  {
+    id: "4",
+    nombre: "Dolores Lindos",
+    artista: "Arquero & Sebastián Teysera",
+    album: "Dolores Lindos",
     genero: "Trap",
-    anio : 2022,
-    imagen :"",
-    archivo : ""
+    anio: "2023",
+    imagen: "https://i.scdn.co/image/ab67616d0000b2738a7d336cb8d6921f6217b458",
+    url: "https://open.spotify.com/embed/track/4N01NxyzZzsfWhvqskiZ00?utm_source=generator"
+  },
+  {
+    id: "5",
+    nombre: "Manchild",
+    artista: "Aiki",
+    album: "Manchild",
+    genero: "Trap",
+    anio: "2025",
+    imagen: "https://i.scdn.co/image/ab67616d0000b27312267561806dc28464b0816e",
+    url: "https://open.spotify.com/embed/track/3jjCwnmjZqQQIomcC1PSUd?utm_source=generator"
+  },
+  {
+    id: "6",
+    nombre: "Save Me Love",
+    artista: "Kygo",
+    album: "Save me love",
+    genero: "Pop",
+    anio: "2025",
+    imagen: "https://i.scdn.co/image/ab67616d0000b273124a6d221e2a68ee6ac2b020",
+    url: "https://open.spotify.com/embed/track/5ObyGDxNWH0Uuuk3NvC5r8?utm_source=generator"
   }
-]
+];

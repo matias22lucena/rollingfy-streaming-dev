@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { cancionesIniciales } from '../helpers/DatosInicio';
 
 const GrillaReproductores = () => {
   const [canciones, setCanciones] = useState([]);
@@ -9,8 +10,6 @@ const GrillaReproductores = () => {
 
   const [esCelular, setEsCelular] = useState(window.innerWidth < 768);
   const [cantidadVisible, setCantidadVisible] = useState(window.innerWidth < 768 ? 2 : 8);
-
-  const servidor = window.location.hostname;
 
   useEffect(() => {
     const revisarTamanioPantalla = () => {
@@ -23,10 +22,14 @@ const GrillaReproductores = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`http://${servidor}:3001/canciones`)
-      .then(respuesta => respuesta.json())
-      .then(datos => setCanciones(datos))
-      .catch(error => console.error("Error cargando canciones:", error));
+    const cancionesGuardadas = JSON.parse(localStorage.getItem('canciones')) || [];
+
+    if (cancionesGuardadas.length === 0) {
+      localStorage.setItem('canciones', JSON.stringify(cancionesIniciales));
+      setCanciones(cancionesIniciales);
+    } else {
+      setCanciones(cancionesGuardadas);
+    }
   }, []);
 
   const mostrarMasCanciones = () => {
