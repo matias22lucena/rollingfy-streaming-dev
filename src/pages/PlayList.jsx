@@ -7,7 +7,7 @@ const Playlist = () => {
   const [usuario, setUsuario] = useState(null);
 
   useEffect(() => {
-    const usuarioLogueado = JSON.parse(localStorage.getItem('usuarioRollingfy'));
+    const usuarioLogueado = JSON.parse(localStorage.getItem('usuarioKey'));
     const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 
     if (usuarioLogueado) {
@@ -46,7 +46,7 @@ const Playlist = () => {
     };
 
     localStorage.setItem('usuarios', JSON.stringify(usuariosActualizados));
-    localStorage.setItem('usuarioRollingfy', JSON.stringify(usuarioActualizado));
+    const usuarioLogueado = JSON.parse(localStorage.getItem('usuarioKey'));
 
     setUsuario(usuarioActualizado);
     setPlaylist(nuevaPlaylist);

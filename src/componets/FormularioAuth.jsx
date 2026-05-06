@@ -31,6 +31,7 @@ const Registro = () => {
             email: datos.correo.toLowerCase().trim(),
             password: datos.password,
             rol: 'usuario',
+            playlist: []
         };
         const respuesta = guardarUsuario(usuarioNuevo);
 

@@ -18,44 +18,49 @@ const Login = ({ setUsuarioLogueado }) => {
   const navegacion = useNavigate();
   const [mostrarPassword, setMostrarPassword] = useState(false);
 
-  const onSubmit = (datos) => {
-    if (
-      datos.email.trim() === import.meta.env.VITE_API_EMAIL &&
-      datos.password.trim() === import.meta.env.VITE_API_PASSWORD
-    ) {
-      setUsuarioLogueado(true);
-      Swal.fire({
-        title: "Bienvenido administrador",
-        text: "Iniciaste sesion correctamente",
-        icon: "success",
-      });
-      navegacion("/admin");
-      return;
-    }
+const onSubmit = (datos) => {
+  if (
+    datos.email.trim() === import.meta.env.VITE_API_EMAIL &&
+    datos.password.trim() === import.meta.env.VITE_API_PASSWORD
+  ) {
+    setUsuarioLogueado(true);
 
-    const usuarios = obtenerUsuarios();
-    const usuarioEncontrado = usuarios.find(
-      (usuario) =>
-        usuario.email === datos.email.trim().toLowerCase() &&
-        usuario.password === datos.password.trim(),
-    );
+    Swal.fire({
+      title: "Bienvenido administrador",
+      text: "Iniciaste sesion correctamente",
+      icon: "success",
+    });
 
-    if (usuarioEncontrado) {
-      setUsuarioLogueado(true);
-      Swal.fire({
-        title: `Bienvenido ${usuarioEncontrado.nombreUsuario}`,
-        text: "Iniciaste sesion correctamente",
-        icon: "success",
-      });
-      navegacion("/");
-    } else {
-      Swal.fire({
-        title: "Ocurrio un error",
-        text: "Credenciales incorrectas",
-        icon: "error",
-      });
-    }
-  };
+    navegacion("/admin");
+    return;
+  }
+
+  const usuarios = obtenerUsuarios();
+
+  const usuarioEncontrado = usuarios.find(
+    (usuario) =>
+      usuario.email === datos.email.trim().toLowerCase() &&
+      usuario.password === datos.password.trim(),
+  );
+
+  if (usuarioEncontrado) {
+    setUsuarioLogueado(usuarioEncontrado);
+
+    Swal.fire({
+      title: `Bienvenido ${usuarioEncontrado.nombreUsuario}`,
+      text: "Iniciaste sesion correctamente",
+      icon: "success",
+    });
+
+    navegacion("/");
+  } else {
+    Swal.fire({
+      title: "Ocurrio un error",
+      text: "Credenciales incorrectas",
+      icon: "error",
+    });
+  }
+};
 
   return (
     <>

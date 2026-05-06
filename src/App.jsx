@@ -9,7 +9,7 @@ import Admin from "./pages/Admin";
 import Footer from "./componets/Footer";
 import FormularioCancion from "./pages/Canciones/FormularioCancion";
 import Playlist from "./pages/PlayList";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
   const sesionUsuario = JSON.parse(localStorage.getItem("usuarioKey")) || false;
@@ -26,6 +26,7 @@ function App() {
           usuarioLogueado={usuarioLogueado}
           setUsuarioLogueado={setUsuarioLogueado}
         />
+
         <Routes>
           <Route
             path="/Login"
@@ -34,6 +35,7 @@ function App() {
           <Route path="/Registro" element={<Registro />} />
           <Route path="/" element={<Home />} />
           <Route path="/detalle/:id/:nombre/:artista" element={<DetalleCancion />} />
+          <Route path="/playlist" element={<Playlist />} />
           <Route path="/admin" element={<Admin />} />
 
           <Route
@@ -44,12 +46,12 @@ function App() {
             path="/admin/editar/:id"
             element={<FormularioCancion titulo="Editar Canción" />}
           />
-                  <Route path="/playlist" element={<Playlist />} />
-
         </Routes>
+
         <Footer />
       </BrowserRouter>
     </AuthProvider>
   );
 }
+
 export default App;

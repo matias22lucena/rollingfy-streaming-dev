@@ -41,7 +41,7 @@ const GrillaReproductores = () => {
   };
 
   const agregarAPlaylist = (cancion) => {
-    const usuarioLogueado = JSON.parse(localStorage.getItem('usuarioRollingfy'));
+   const usuarioLogueado = JSON.parse(localStorage.getItem('usuarioKey'));
 
     if (!usuarioLogueado) {
       alert('Debes iniciar sesión para agregar canciones a tu playlist.');
@@ -77,7 +77,7 @@ const GrillaReproductores = () => {
     );
 
     localStorage.setItem('usuarios', JSON.stringify(usuariosActualizados));
-    localStorage.setItem('usuarioRollingfy', JSON.stringify(usuarioActualizado));
+   localStorage.setItem('usuarioKey', JSON.stringify(usuarioActualizado));
 
     alert('Canción agregada a My Playlist.');
   };
